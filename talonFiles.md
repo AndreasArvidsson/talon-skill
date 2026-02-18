@@ -8,7 +8,10 @@ The content of a `.talon` can be conditionally activated based on a [context mat
 
 ## Voice commands
 
-Left hand side of the colon defines the spoken phrase rule that the user will say to trigger the command. The right hand side defines the action or actions that will be taken when the command is spoken. In Talon a [action](./actions.md) is a function defined in Python.
+A Talon voice command has two parts.
+
+1. The left hand side of the colon defines the [spoken phrase rule](./spokenPhraseRule.md) that the user will say to trigger the command.
+2. The right hand side of the colon defines the Talon script with the action(s) that will be taken when the command is spoken. In Talon a [action](./actions.md) is a function defined in Python.
 
 ```talon
 # When they user says "go left", the 'edit.left' action will be called and cursor will move left.
@@ -21,35 +24,30 @@ press left: key(left)
 custom action: user.my_custom_action()
 ```
 
-### Arguments in the spoke in phrase rule
-
-The spoken phrase rule doesn't have to be a text literal. It can use dynamic informations from lists and captures.
-
-```talon
-# When the user says "press {NAME_OF_KEY}" the key action is called with the value of the list item NAME_OF_KEY.
-# eg: "press dash" => key("-")
-press {user.key}: key(key)
-
-# When the user says "press {NAME_OF_KEY}" the key action is called with the return value of the matched capture.
-press <user.key>: key(key)
-```
-
 ## Hotkeys
 
-Instead of a spoke in voice command you can press a key to trigger a Talon action
+Instead of a spoken voice command you can press a key to trigger a Talon action.
 
 ```talon
-key(f1): print("f1 is pressed")
+key(f1): edit.left()
 ```
 
 ## Talon script
 
-Talon script is the name of the scripting language that is on the right hand side of a command or hotkey definition. It can call actions/functions but also do some simples scripting things like creating variables.
+Talon script is the name of the scripting language that is on the right hand side of a command or hotkey definition. It can call actions/functions, but also do some rudimentary scripting features like creating variables.
 
 ```talon
 Some command:
     value = user.get_value()
     print(value)
+```
+
+A literal string in Talon script is syntactic sugar for the insert action.
+
+```talon
+# Both of these are equivalent
+hello world: insert("hello world")
+hello world: "hello world"
 ```
 
 ## Settings
