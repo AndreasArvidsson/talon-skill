@@ -1,14 +1,16 @@
 # Talon list files
 
-`.talon-list` files are used to define the content of a list. It cannot declare new lists only define the content of already declared lists. It cannot append or edit a list in anyway. It's a full definition of the list content.
+`.talon-list` files define entries for a Talon list.
 
-The content of a `.talon` can be conditionally activated based on a [context matcher header](./contextMatchers.md) at the top of the file.
+They do not declare new user lists; user lists are declared in Python with `mod.list(...)`, then populated in `.talon-list`.
+
+Like `.talon` files, `.talon-list` files can be conditionally activated using a [context matcher header](./contextMatchers.md) at the top of the file.
 
 `#` denotes a comment in a `.talon-list` file, and any line that starts with `#` will be ignored by Talon.
 
-The content of a Talon list is key/value pairs. If you want this same text for both key and value you can omit the value. This is similar to how you can do with objects in JavaScript.
+The list content is key/value pairs. If key and value are the same, you can omit the value.
 
-In to long list files the first line needs to be the `list` pair containing the list name.
+The file should include a `list: ...` header naming the list on the first line.
 
 ## Example
 

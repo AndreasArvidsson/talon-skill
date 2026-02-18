@@ -11,10 +11,10 @@ The content of a `.talon` can be conditionally activated based on a [context mat
 A Talon voice command has two parts.
 
 1. The left hand side of the colon defines the [spoken phrase rule](./spokenPhraseRule.md) that the user will say to trigger the command.
-2. The right hand side of the colon defines the Talon script with the action(s) that will be taken when the command is spoken. In Talon a [action](./actions.md) is a function defined in Python.
+2. The right hand side of the colon defines Talon script: the action(s) that run when the command is spoken. In Talon, an [action](./actions.md) is a function defined in Python.
 
 ```talon
-# When they user says "go left", the 'edit.left' action will be called and cursor will move left.
+# When the user says "go left", the `edit.left` action runs.
 go left: edit.left()
 
 # When the user says "press left", the 'key' action will be called with the argument 'left' and the left arrow key will be pressed.
@@ -34,7 +34,7 @@ key(f1): edit.left()
 
 ## Talon script
 
-Talon script is the name of the scripting language that is on the right hand side of a command or hotkey definition. It can call actions/functions, but also do some rudimentary scripting features like creating variables.
+Talon script is the language used on the right side of a command or hotkey definition. It can call actions/functions and also supports simple scripting features such as variables.
 
 ```talon
 Some command:
@@ -52,7 +52,7 @@ hello world: "hello world"
 
 ## Settings
 
-Talon files can define setting values. It cannot declare new settings, but it can define it the values of existing settings. The settings block consists of key/value pairs where the left hand side is the setting identifier and the right hand side the setting value.
+Talon files can define setting values. They cannot declare new settings, but they can set values for existing settings. The `settings()` block is key/value pairs where the left side is the setting identifier and the right side is the value.
 
 ```talon
 settings():

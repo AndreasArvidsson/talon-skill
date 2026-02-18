@@ -9,16 +9,16 @@ The spoken phrase rule is used in two different places in Talon:
 
 In its simplest form a spoken phrase rule is one or more words.
 
-Note that only letters are supported. Symbols and numbers needs to be spelled out.
+Note that only letters are supported. Symbols and numbers needs to be spelled out and in practice, symbols and numbers are usually represented through lists/captures (for example `{user.symbol}` or `<number_small>`).
 
 ```talon
-# When they user says "go left", the 'edit.left' action will be called and cursor will move left.
+# When the user says "go left", the `edit.left` action runs.
 go left: edit.left()
 ```
 
 ## Arguments in the spoken phrase rule
 
-The spoken phrase rule doesn't have to be a text literal. It can use dynamic informations from Talon lists and captures.
+The spoken phrase rule does not have to be text-only. It can include dynamic values from Talon lists and captures.
 
 `{NAME}` is a Talon list called `NAME`. When the user speaks a key in the Talon list the associated value will be used as the argument.
 
@@ -33,7 +33,7 @@ press {user.key}: key(key)
 press <user.key>: key(key)
 ```
 
-If the same list or argument is used multiple times we can get the different argument values with a number suffix.
+If the same list/capture appears more than once, you can access each matched value with a numeric suffix.
 
 ```talon
 # When the user says "press air and bat": letter_1 = "a" and letter_2 = "b".
@@ -78,7 +78,7 @@ Repetitions are mostly used for list or capture arguments. In this case we use t
 
 ```talon
 # This voice command will match "press air", "press air and bat", "press air and bat and cap".
-# When the user says "press air and bat and cap": letter_list = ["a", "b, "c""].
+# When the user says "press air and bat and cap": letter_list = ["a", "b", "c"].
 press {user.letter} (and {user.letter})*: user.press_many(letter_list)
 ```
 

@@ -7,14 +7,24 @@ description: Instructions for how to work with user scripts for the Talon voice 
 
 Talon is a voice control software that allows users to control their computer using voice commands. It uses a unique scripting language that is based on Python, but with some differences. In this section, we will cover the basics of how to work with user scripts for Talon, including understanding `.talon` and `.talon-list` files, the unique way Talon uses Python, and how to write scripts that can be used in Talon.
 
+## Talon concepts
+
+- [Actions](./actions.md) Python functions callable from Talon voice commands
+- [Lists](./lists.md) Extend Talon voice grammar with variables using simple key/value mappings
+- [Captures](./captures.md) Extend Talon voice grammar with variables using Python callbacks
+- [Modules](./modules.md) Declares new actions, lists, captures and settings
+- [Contexts](./contexts.md) Context-specific definitions of existing actions, lists, captures and settings
+- [Context matchers](./contextMatchers.md) Matchers to determine when voice commands and contexts are active
+- [Spoken phrase rule](./spokenPhraseRule.md) The spoken grammar in Talon voice commands and captures
+
 ## .talon and .talon-list files
 
 Talon introduces two unique file formats for user scripts:
 
-- [`.talon`](./talonFiles.md)
-- [`.talon-list`](./talonListFiles.md) files.
+- [.talon files](./talonFiles.md) Define voice commands, hotkeys and settings
+- [.talon-list files](./talonListFiles.md) Define list content
 
-## Script to get available actions, captures and lists
+## Scripts to get available actions, captures and lists
 
 [actions.js](./scripts/actions.js) prints a list of available Talon actions.
 
