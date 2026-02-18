@@ -23,7 +23,7 @@ def direction(m) -> str:
     return str(m)
 ```
 
-The `rule` uses the same [spoken-rule grammar](./spokenPhraseRule.md) as command rules in `.talon` files.
+The `rule` uses the same [spoken phrase rule](./spokenPhraseRule.md) as command rules in `.talon` files.
 
 ## Using captures in `.talon` files
 

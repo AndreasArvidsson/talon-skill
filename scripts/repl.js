@@ -12,7 +12,8 @@ export function repl(command) {
       } else if (stderr) {
         reject(`stderr: ${stderr}`);
       } else {
-        resolve(stdout);
+        const res = stdout.replace(/^Talon REPL \| .*?\r?\n/, "");
+        resolve(res);
       }
     });
 

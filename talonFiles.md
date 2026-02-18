@@ -10,8 +10,8 @@ The content of a `.talon` can be conditionally activated based on a [context mat
 
 A Talon voice command has two parts.
 
-1. The left hand side of the colon defines the [spoken phrase rule](./spokenPhraseRule.md) that the user will say to trigger the command.
-2. The right hand side of the colon defines Talon script: the action(s) that run when the command is spoken. In Talon, an [action](./actions.md) is a function defined in Python.
+1. The left-hand side of the colon defines the [spoken phrase rule](./spokenPhraseRule.md) that the user will say to trigger the command.
+2. The right-hand side of the colon defines Talon script: the action(s) that run when the command is spoken. In Talon, an [action](./actions.md) is a function defined in Python.
 
 ```talon
 # When the user says "go left", the `edit.left` action runs.
@@ -31,6 +31,28 @@ Instead of a spoken voice command you can press a key to trigger a Talon action.
 ```talon
 key(f1): edit.left()
 ```
+
+## Gamepad bindings
+
+Talon supports using a gamepad to trigger Talon actions.
+
+```talon
+gamepad(dpad_left): edit.left()
+gamepad(north:down): edit.up()
+gamepad(l1:change): print(value)
+gamepad(left_xy:repeat): print(x, y)
+gamepad(right_x:repeat): print(x)
+```
+
+Available gamepad buttons:
+
+- Face buttons: `north`, `south`, `east`, `west`
+- D-pad buttons: `dpad_up`, `dpad_down`, `dpad_left`, `dpad_right`
+- Shoulder/bumper buttons: `l1`, `r1`
+- Trigger buttons: `l2`, `r2`
+- Stick buttons: `l3`, `r3`
+- System buttons: `select`, `start`
+- Stick axes: `left_x`, `left_y`, `left_xy`, `right_x`, `right_y`, `right_xy`
 
 ## Talon script
 

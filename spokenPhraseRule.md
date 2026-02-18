@@ -2,14 +2,14 @@
 
 The spoken phrase rule is used in two different places in Talon:
 
-1. In [`.talon` files](./talonFiles.md) on the left hand side of a voice command.
+1. In [`.talon` files](./talonFiles.md) on the left-hand side of a voice command.
 2. In `.py` files as the rule of a Talon capture.
 
 ## Simple rule
 
 In its simplest form a spoken phrase rule is one or more words.
 
-Note that only letters are supported. Symbols and numbers needs to be spelled out and in practice, symbols and numbers are usually represented through lists/captures (for example `{user.symbol}` or `<number_small>`).
+Note that only letters are supported. Symbols and numbers need to be spelled out and, in practice, symbols and numbers are usually represented through lists/captures (for example `{user.symbol}` or `<number_small>`).
 
 ```talon
 # When the user says "go left", the `edit.left` action runs.
@@ -89,7 +89,7 @@ press {user.letter} (and {user.letter})*: user.press_many(letter_list)
 - `[go] left` Optional grammar
 - `a | b` Conditional `a` or `b`
 - `(a | b) c` Parenthesis for boundaries
-- `{user.letter}*` Zero or many repeater
-- `{user.letter}+` One or many repeater
+- `{user.letter}*` Zero or more repetitions
+- `{user.letter}+` One or more repetitions
 - `letter_1` Access first value for letter list/capture
 - `letter_list` Access list of values for letter list/capture

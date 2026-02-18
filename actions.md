@@ -6,7 +6,7 @@ In Talon, an action is a Python function callable from `.talon` files or Python 
 
 Actions are primarily declared on a class decorated with `@mod.action_class`. The class is only a declaration container; Talon does not instantiate it.
 
-When declaring user actions, you are required to include a docstrings. User actions live in the `user` namespace.
+When declaring user actions, you are required to include a docstring. User actions live in the `user` namespace.
 
 ```py
 from talon import Module
