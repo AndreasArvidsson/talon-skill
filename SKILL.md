@@ -10,12 +10,12 @@ Talon is a voice control software that allows users to control their computer us
 ## Talon concepts
 
 - [Actions](./actions.md) Python functions callable from Talon voice commands
-- [Lists](./lists.md) Extend Talon voice grammar with variables using simple key/value mappings
-- [Captures](./captures.md) Extend Talon voice grammar with variables using Python callbacks
-- [Modules](./modules.md) Declares new actions, lists, captures and settings
-- [Contexts](./contexts.md) Context-specific definitions of existing actions, lists, captures and settings
-- [Context matchers](./contextMatchers.md) Matchers to determine when voice commands and contexts are active
-- [Spoken phrase rule](./spokenPhraseRule.md) The spoken grammar in Talon voice commands and captures
+- [Lists](./lists.md) Key/value mappings that provide variables in spoken rules
+- [Captures](./captures.md) Python callbacks that parse spoken grammar into values
+- [Modules](./modules.md) Declarations for actions, lists, captures, settings, modes, tags, and apps
+- [Contexts](./contexts.md) Context-specific implementations and values
+- [Context matchers](./contextMatchers.md) Match logic that controls when files/contexts are active
+- [Spoken phrase rule](./spokenPhraseRule.md) Spoken grammar used in commands and captures
 
 ## .talon and .talon-list files
 

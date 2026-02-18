@@ -17,10 +17,10 @@ A Talon voice command has two parts.
 # When the user says "go left", the `edit.left` action runs.
 go left: edit.left()
 
-# When the user says "press left", the 'key' action will be called with the argument 'left' and the left arrow key will be pressed.
+# When the user says "press left", the `key` action runs with argument `left`.
 press left: key(left)
 
-# When the user says "custom action", the user.my_custom_action will be called.
+# When the user says "custom action", `user.my_custom_action` runs.
 custom action: user.my_custom_action()
 ```
 
