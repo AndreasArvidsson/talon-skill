@@ -62,3 +62,8 @@ Talon REPL | Python 3.13.7 (pipelines/6318:29f8507, Aug 23 2025, 21:59:54) [MSC 
    path: user\andreas-talon\core\keys\keys.talon
    rule: "press <user.key_any>"
 ```
+
+## References
+
+- [Talon official docs](https://talonvoice.com/docs)
+- [Talon community wiki](https://talon.wiki/)
