@@ -1,6 +1,8 @@
 ---
 name: talon
 description: Instructions for how to work with user scripts for the Talon voice control software. Understanding .talon and .talon-list files, the unique way Talon uses Python, and how to write scripts that can be used in Talon.
+metadata:
+  short-description: Working with Talon user scripts
 ---
 
 # Talon
