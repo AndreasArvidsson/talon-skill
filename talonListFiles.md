@@ -6,7 +6,7 @@ They do not declare new user lists; user lists are declared in Python with `mod.
 
 Like `.talon` files, `.talon-list` files can be conditionally activated using a [context matcher header](./contextMatchers.md) at the top of the file.
 
-`#` denotes a comment in a `.talon-list` file, and any line that starts with `#` will be ignored by Talon.
+`#` denotes a comment in a `.talon-list` file, and any line that starts with `#` will be ignored by Talon. Inline comments are not supported.
 
 The list content is key/value pairs. If key and value are the same, you can omit the value.
 

@@ -115,6 +115,14 @@ $ node scripts/sim.js "press air"
    rule: "press <user.key_any>"
 ```
 
+## Do
+
+- Place declarations of Talon modules, contexts, apps, tags, settings, and lists at the top of Python files before any code that uses them. Put captures, functions, and action classes below.
+
+## Do not
+
+- Never put `sleep` in a cron callback; it blocks Talon's scheduler thread and can freeze or delay other work.
+
 ## References
 
 - [Talon official docs](https://talonvoice.com/docs)

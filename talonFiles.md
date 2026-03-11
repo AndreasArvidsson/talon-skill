@@ -4,7 +4,7 @@
 
 The content of a `.talon` can be conditionally activated based on a [context matcher header](./contextMatchers.md) at the top of the file.
 
-`#` denotes a comment in a `.talon` file, and any line that starts with `#` will be ignored by Talon.
+`#` denotes a comment in a `.talon` file, and any line that starts with `#` will be ignored by Talon. Inline comments are not supported.
 
 ## Voice commands
 
