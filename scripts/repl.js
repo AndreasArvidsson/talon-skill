@@ -1,6 +1,7 @@
 import os from "node:os";
 import path from "node:path";
 import childProcess from "node:child_process";
+import { getTalonHome } from "./utils.js";
 
 export function repl(command) {
   return new Promise((resolve, reject) => {
@@ -28,9 +29,7 @@ export function repl(command) {
 
 function getReplPath() {
   if (os.platform() === "win32") {
-    const appData =
-      process.env.APPDATA ?? path.join(os.homedir(), "AppData", "Roaming");
-    return path.join(appData, "talon\\venv\\3.13\\Scripts\\repl.bat");
+    return path.join(getTalonHome(), "venv\\3.13\\Scripts\\repl.bat");
   }
-  return path.join(os.homedir(), ".talon/bin/repl");
+  return path.join(getTalonHome(), "bin/repl");
 }

@@ -30,7 +30,7 @@ Talon introduces two unique file formats for user scripts:
 - [Events](./events.md) Events
 - [Key codes](./keyCodes.md) Key codes for hotkeys and key action
 
-## Scripts to get available actions, captures, lists, and settings
+## Scripts to get available actions, captures, lists, settings, and logs
 
 [actions.js](./scripts/actions.js) prints a list of available Talon actions.
 
@@ -69,6 +69,39 @@ $ node scripts/lists.js
 ```sh
 $ node scripts/settings.js
 ['speech.record_all', 'user.subtitles_show', 'user.subtitles_screens', 'user.subtitles_size']
+```
+
+[tailLog.js](./scripts/tailLog.js) prints the last 100 lines from Talon's log file.
+
+```sh
+$ node scripts/tailLog.js
+...last 100 lines of talon.log...
+```
+
+Run this script after making changes to your Talon scripts to check for errors. For example, if you have an indentation error in one of your Python files, you might see an error like this in the logs:
+
+```sh
+2026-03-11 10:58:54.565 ERROR user.andreas-talon.debug.debug_title (c:\users\andreas\appdata\roaming\talon\user\andreas-talon\debug\debug_title.py) import failed
+   16:            threading.py:1014* # cron thread
+   15:            threading.py:1043*
+   14:            threading.py:994 *
+   13:           talon\cron.py:156 |
+   12: talon\scripting\rctx.py:235 | # 'cron' main:Cron.interval.<locals>.call()
+   11:           talon\cron.py:184 |
+   10:             talon\fs.py:89  |
+    9:             talon\fs.py:68  |
+    8: talon\scripting\rctx.py:235 | # 'fs' main:Loader.on_change()
+    7: app\resources\loader.py:792 |
+    6: app\resources\loader.py:763 |
+    5: app\resources\loader.py:429 | # [stack splice]
+    4:   importlib\__init__.py:88  |
+    3: app\resources\loader.py:243 |
+    2: app\resources\loader.py:238 |
+    1:    importlib._bootstrap:488 |
+  File "C:\Users\andreas\AppData\Roaming\talon\user\andreas-talon\debug\debug_title.py", line 17
+    # app.register("ready", on_ready)
+                                     ^
+IndentationError: expected an indented block after function definition on line 13
 ```
 
 ## Testing
